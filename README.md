@@ -15,37 +15,37 @@ Hrvatski
 
 ### Opis atributa
 > datum
-> Datum uzimanja podatka zapisan ISO standardom
+>> Datum uzimanja podatka zapisan ISO standardom
 
 > link_reddit
-> Link reddit stranice gdje je pronađena preporuka knjige
+>> Link reddit stranice gdje je pronađena preporuka knjige
 
 > korisnik
-> Korisničko ime korisnika koji je preporučio knjigu
+>> Korisničko ime korisnika koji je preporučio knjigu
 
 > broj_upvote
-> Kumulativni broj upvote metrike (upvote - downvote)
+>> Kumulativni broj upvote metrike (upvote - downvote)
 
 > knjiga
-> Naziv knjige
+>> Naziv knjige
 
 > ISBN10
-> ISBN10 oznaka knjige
+>> ISBN10 oznaka knjige
 
 > autor
-> Naziv autora knjige
+>> Naziv autora knjige
 
 > područje
-> Područje tematike knjige (može biti više)
+>> Područje tematike knjige (može biti više)
 
 > potpodručje
-> Potpodručje područja tematike knjige (može biti više)
+>> Potpodručje područja tematike knjige (može biti više)
 
 > link_amazon
-> Link na amazon stranicu knjige
+>> Link na amazon stranicu knjige
 
 > ocjena_amazon
-> Ocjena knjige na amazonu
+>> Ocjena knjige na amazonu
 
 ### Općeniti opis
 Skup podataka namijenjen je kako bi se skupile inspiracije za knjige iz specifičnih područja. Reddit se subjektivno pokazao kao dovoljno dobar izvor informacija. Uglavnom se preporučuju knjige koje su prihvaćene od mase, ali i manje poznate. 
