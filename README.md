@@ -32,7 +32,7 @@ Hrvatski
 > ISBN10
 >> ISBN10 oznaka knjige
 
-> autor
+> autori
 >> Naziv autora knjige
 
 > područje
