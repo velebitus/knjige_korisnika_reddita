@@ -134,3 +134,80 @@ db.knjige.insertMany([
       ocjena_amazon: 4.5,
     }
 ])
+
+- kako bi se exportali podaci u csv formatu pravilno, trebaju se array flattenat
+- za to sluzi sljedeca naredba:
+
+db.knjige.aggregate([
+  {
+    $project: {
+      datum: 1,
+      link_reddit: 1,
+      korisnik: 1,
+      broj_upvote: 1,
+      knjiga: 1,
+      ISBN10: 1,
+      link_amazon: 1,
+      ocjena_amazon: 1,
+
+      autori: {
+        $map: {
+          input: "$autori",
+          as: "a",
+          in: { $concat: ["$$a.ime", " ", "$$a.prezime"] }
+        }
+      },
+      područje: 1,
+      potpodručje: 1
+    }
+  },
+  {
+    $project: {
+      datum: 1,
+      link_reddit: 1,
+      korisnik: 1,
+      broj_upvote: 1,
+      knjiga: 1,
+      ISBN10: 1,
+      link_amazon: 1,
+      ocjena_amazon: 1,
+
+      autori: { $reduce: {
+        input: "$autori",
+        initialValue: "",
+        in: { 
+          $cond: [
+            { $eq: ["$$value", ""] },
+            "$$this",
+            { $concat: ["$$value", "; ", "$$this"] }
+          ]
+        }
+      }},
+      područje: { $reduce: {
+        input: "$područje",
+        initialValue: "",
+        in: { 
+          $cond: [
+            { $eq: ["$$value", ""] },
+            "$$this",
+            { $concat: ["$$value", "; ", "$$this"] }
+          ]
+        }
+      }},
+      potpodručje: { $reduce: {
+        input: "$potpodručje",
+        initialValue: "",
+        in: { 
+          $cond: [
+            { $eq: ["$$value", ""] },
+            "$$this",
+            { $concat: ["$$value", "; ", "$$this"] }
+          ]
+        }
+      }}
+    }
+  },
+  {
+    $out: "knjige_flattened"
+  }
+])
