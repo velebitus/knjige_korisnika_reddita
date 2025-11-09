@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/velebitus/knjige_korisnika_reddita/blob/main/schema.json",
+  "title": "Knjige korisnika reddita OR",
+  "type": "array",
+  "description": "Skup preporuka knjiga korisnika reddita za otvoreno racunarstvo.",
+  "items": {
+    "type": "object",
+    "title": "Knjiga",
+    "description": "Objekt koji sadrži podatke o preporuci knjige korisnika reddita",
+    "properties": {
+      "_id": {
+        "type": "object",
+        "properties": {
+          "$oid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "$oid"
+        ]
+      },
+      "datum": {
+        "type": "object",
+        "properties": {
+          "$date": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "$date"
+        ]
+      },
+      "link_reddit": {
+        "type": "string"
+      },
+      "korisnik": {
+        "type": "string"
+      },
+      "broj_upvote": {
+        "type": "number"
+      },
+      "knjiga": {
+        "type": "string"
+      },
+      "ISBN10": {
+        "type": "string"
+      },
+      "autori": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "ime": {
+              "type": "string"
+            },
+            "prezime": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ime",
+            "prezime"
+          ]
+        }
+      },
+      "područje": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "potpodručje": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "link_amazon": {
+        "type": "string"
+      },
+      "ocjena_amazon": {
+        "type": "number"
+      }
+    },
+    "required": [
+      "_id",
+      "datum",
+      "link_reddit",
+      "korisnik",
+      "broj_upvote",
+      "knjiga",
+      "ISBN10",
+      "autori",
+      "područje",
+      "potpodručje",
+      "link_amazon",
+      "ocjena_amazon"
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knjige korisnika reddita</title>
+    <script defer src="index.js"></script>
+    <style>
+        table,
+        tr,
+        td {
+            border: 1px solid green;
+            padding: 10px;
+            text-align: center;
+            max-width: 100%;
+        }
+
+        table {
+            table-layout: fixed;
+        }
+
+        div {
+            overflow: auto;
+            width: 100%;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <div>
+        <form id="upit" action="">
+            <label for="searchbar">Search: </label>
+            <input type="text" id="searchbar"><br>
+            <input type="radio" id="sve" name="chooseField" value="sve" checked>
+            <label for="sve">Obnovi na pocetno</label><br>
+            <input type="radio" id="wildcard" name="chooseField" value="wildcard">
+            <label for="wildcard">Wildcard</label><br>
+            <input type="radio" id="korisnik" name="chooseField" value="korisnik">
+            <label for="korisnik">Korisnik</label><br>
+            <input type="radio" id="knjiga" name="chooseField" value="knjiga">
+            <label for="knjiga">Knjiga</label><br>
+            <input type="radio" id="ISBN10" name="chooseField" value="ISBN10">
+            <label for="ISBN10">ISBN10</label><br>
+            <input type="radio" id="autori.ime" name="chooseField" value="autori.ime">
+            <label for="autori.ime">Autori ime</label><br>
+            <input type="radio" id="autori.prezime" name="chooseField" value="autori.prezime">
+            <label for="autori.prezime">Autori prezime</label><br>
+            <input type="radio" id="područje" name="chooseField" value="područje">
+            <label for="područje">Područje</label><br>
+            <input type="radio" id="potpodručje" name="chooseField" value="potpodručje">
+            <label for="potpodručje">Potpodručje</label><br>
+            <button>Submit</button>
+        </form>
+    </div>
+    <br>
+    <div>
+        <table id="tablica">
+            <tr>
+                <th>datum</th>
+                <th>link_reddit</th>
+                <th>korisnik</th>
+                <th>broj_upvote</th>
+                <th>knjiga</th>
+                <th>ISBN10</th>
+                <th>autori</th>
+                <th>područje</th>
+                <th>potpodručje</th>
+                <th>link_amazon</th>
+                <th>ocjena_amazon</th>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <button id="datatableJsonDownload">
+            JSON download
+        </button>
+    </div>
+    <div>
+        <button id="datatableCSVDownload">
+            CSV download
+        </button>
+    </div>
+
+</body>
+
+</html>
